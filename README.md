@@ -1,6 +1,5 @@
 # Tic-tac-toe-ML
 Software that plays Tic-tac-toe by using machine learning
-
 ## How does the program work?
 The software has a "rating" mechanism(Used to rank a board according to how good it is to the player who makes it and by that choice the next move) by calculating data on it and giving "weight" to each subject, the purpose of learning is to find the optimal weights
 
@@ -19,6 +18,5 @@ The data is list of 31 elements divided as follows:
 * 28 - If the player lose in this board
 * 29 - Player's chance of winning in the next turn (ranging from 0 to 1)
 * 30 - Player's chance of losing in the next turn (ranging from 0 to 1)
-
 ## How he train himself?
 To adjust the weights, the Generalizer uses a method called [LMS(Least mean squares filter)](https://en.wikipedia.org/wiki/Least_mean_squares_filter)
