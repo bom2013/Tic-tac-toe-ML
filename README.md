@@ -10,13 +10,11 @@ The learning / training process is done by 4 parts, when each part performs its 
 4. Generalizer - Train using the training examples he got from the Critic
 ## How is the ranking mechanism processed?
 The software calculates a long list of data and summarizes it while giving each one a certain "weight".
-The data is list of 31 elements divided as follows:
-* 0-8 - "1" if the corresponding place in the board is blank or "0" if not
-* 9-17 - "1" if the corresponding place in the board is occupied by the player or "0" if not
-* 18-26 - "1" if the corresponding place in the board is occupied by the other player or "0" if not
-* 27 - If the player win in this board
-* 28 - If the player lose in this board
-* 29 - Player's chance of winning in the next turn (ranging from 0 to 1)
-* 30 - Player's chance of losing in the next turn (ranging from 0 to 1)
+The data is list of 31 elements that include:
+* which places in the board empty
+* which places in the board is occupied by the player
+* which places in the board is occupied by the other player
+* If the player win\lose in this board
+* Player's chance of winning\losing in the next turn
 ## How he train himself?
 To adjust the weights, the Generalizer uses a method called [LMS(Least mean squares filter)](https://en.wikipedia.org/wiki/Least_mean_squares_filter)
