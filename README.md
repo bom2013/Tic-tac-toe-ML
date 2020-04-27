@@ -20,3 +20,10 @@ The data is list of 31 elements that include:
 * Player's chance of winning\losing in the next turn
 ## How he train himself?
 To adjust the weights, the Generalizer uses a method called [LMS(Least mean squares filter)](https://en.wikipedia.org/wiki/Least_mean_squares_filter)
+## Thoughts and wonder
+I built this project out of interest if it works, the whole mechanism is pretty primitive, it's actually a "neuron network" with only one neuron ...
+In addition, the vector is very small (a total of 31 things to consider in the calculation), so I did not expect any improvement as a result of the learning process.
+In the end, after running 250,000 workouts, there was some improvement, not enough to beat a person, but you can definitely see that he's not "guessing".
+I suppose if you improve the amount of things it takes in his calculation(the vector) the software will work better.
+## Development
+As I mentioned before, this was only develop as an experiment, but if you have any comments, please feel free to contact me / send a PR
