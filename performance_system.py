@@ -39,8 +39,18 @@ def get_legal_moves(b, player):
             moves.append(t_b)
     return moves
 
-#This function get "x" - the list of variable
+# This function get "x" - the list of variable
 def get_x(b, player):
+    '''
+    The data is list of 31 elements divided as follows:
+    * 0-8 - "1" if the corresponding place in the board is blank or "0" if not
+    * 9-17 - "1" if the corresponding place in the board is occupied by the player or "0" if not
+    * 18-26 - "1" if the corresponding place in the board is occupied by the other player or "0" if not
+    * 27 - If the player win in this board
+    * 28 - If the player lose in this board
+    * 29 - Player's chance of winning in the next turn (ranging from 0 to 1)
+    * 30 - Player's chance of losing in the next turn (ranging from 0 to 1)
+    '''
     x = []
     for i in range(9):
         if b[int(i/3)][i % 3] == 0:
@@ -64,7 +74,7 @@ def get_x(b, player):
     return x
 
 
-#This function calculate the v(The ranking mechanism)
+# This function calculate the v(The ranking mechanism)
 def calc_v(w, b, player):
     res = []
     x = get_x(b, player)
@@ -72,7 +82,7 @@ def calc_v(w, b, player):
         res.append(x[i]*w[i])
     return sum(res)
 
-
+#This funciton calculate the chance to win next
 def is_near_to_end(b, player):
     m = get_legal_moves(b, player)
     if len(m) == 0:
@@ -83,10 +93,10 @@ def is_near_to_end(b, player):
             w += 1
     return w/len(m)
 
-#This function check if the game end
-#return:
-#0 - The game is still happening
-#1 or 2 - Victory to 1 or 2
+# This function check if the game end
+# return:
+# 0 - The game is still happening
+# 1 or 2 - Victory to 1 or 2
 #3 - draw
 def is_end_of_game(b):
     for i in range(3):
@@ -125,7 +135,7 @@ def is_end_of_game(b):
                 return 0
     return 3
 
-#This function return the best move from set of moves
+# This function return the best move from set of moves
 def get_best_move(m, player, w):
     best_m = []
     v_arr = []
