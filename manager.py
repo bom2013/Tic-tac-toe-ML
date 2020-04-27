@@ -41,12 +41,14 @@ while not end_main:
             with open(input("Enter file name: ")+".txt", "w")as f:
                 f.write(str(w))
             print("File saved")
+        print("Finish training, return to main menu")
     elif inp == 2:
-        pass
+        w = []
+        with open(input("Enter file name: ")+".txt", "r")as f:
+            w = list(f.read())
+        print("Weight loaded")
+        print("Start game, have fun!")
+        performance_system.play_game_against_user(1, w)
+        print("Finish game, return to main menu")
     else:
         exit()
-
-#input("enter to play against comp")
-# perf_sys.play_game_against_user(1,w)
-# with open("w_learned.txt", "w")as f:
- #   f.write(str(w))
